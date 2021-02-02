@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh.sh"
+export ZSH="$HOME/.oh-my-zsh"
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -127,4 +127,3 @@ alias got='git '
 alias get='git '
 alias grh='git reset --hard '
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
