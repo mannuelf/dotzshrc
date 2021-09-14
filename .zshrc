@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+ZSH_DISABLE_COMPFIX="true"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -69,14 +70,17 @@ ZSH_THEME="norm"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(k git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export MANPATH="/usr/local/man:$MANPATH"
+# Android Studio
+export ANDROID_SDK=$HOME/Library/Android/sdk/
+export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 
+export MANPATH="/usr/local/man:$MANPATH"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # You may need to manually set your language environment
@@ -104,13 +108,6 @@ if [[ -n $SSH_CONNECTION ]]; then
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# Add Visual Studio Code (code), Android
-#export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/$HOME/Android/sdk/platform-tools"export PYENV_ROOT="$HOME/.pyenv"
-#export PATH="$PYENV_ROOT/bin:$PATH"
-#if command -v pyenv 1>/dev/null 2>&1; then
- # eval "$(pyenv init -)"
-#fi
-
 # RUST, cargo
 #export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -134,10 +131,10 @@ __conda_setup="$('/Users/noro-mfe/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2>
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/noro-mfe/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/noro-mfe/opt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/opt/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/noro-mfe/opt/anaconda3/bin:$PATH"
+        export PATH="$HOME/opt/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -146,3 +143,7 @@ unset __conda_setup
 eval "$(pyenv init -)"
 
 source ~/.fresh/build/shell.sh
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+export PATH="/usr/local/opt/krb5/bin:$PATH"
+export PATH="/usr/local/opt/krb5/sbin:$PATH"
+export PATH="$HOME/.deno/bin:$PATH"
