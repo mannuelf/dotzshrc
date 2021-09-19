@@ -80,4 +80,4 @@ alias got='git '
 alias get='git '
 alias grh='git reset --hard '
 
-eval "$(pyenv init -)"
+eval "$(minikube docker-env) && $(pyenv init -)"
