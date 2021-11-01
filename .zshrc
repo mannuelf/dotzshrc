@@ -1,6 +1,6 @@
 ZSH_DISABLE_COMPFIX="true"
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="norm"
+ZSH_THEME="shades-of-purple"
 # ZSH_THEME_RANDOM_CANDIDATES=(random)
 # CASE_SENSITIVE="true"
 # HYPHEN_INSENSITIVE="true"
@@ -15,7 +15,7 @@ ZSH_THEME="norm"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 # HIST_STAMPS="mm/dd/yyyy"
 # ZSH_CUSTOM=/path/to/new-custom-folder
-plugins=(k git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Android Studio
@@ -24,9 +24,6 @@ export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 
 export MANPATH="/usr/local/man:$MANPATH"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-source ~/.fresh/build/shell.sh
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # This loads nvm
 export NVM_DIR="$HOME/.nvm"
@@ -81,3 +78,7 @@ alias get='git '
 alias grh='git reset --hard '
 
 eval "$(minikube docker-env) && $(pyenv init -)"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/mannuelferreira/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
