@@ -37,6 +37,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 #export PATH="$HOME/.deno/bin:$PATH"
 
 # Preferred editor for local and remote sessions
+export EDITOR='nvim'
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='nvim'
  else
@@ -57,6 +58,7 @@ alias gx='gitx --all'
 alias got='git '
 alias get='git '
 alias grh='git reset --hard '
+alias vim='nvim'
 
 eval "$(minikube docker-env) && $(pyenv init -)"
 export NVM_DIR="$HOME/.nvm"
