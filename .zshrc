@@ -52,7 +52,7 @@ alias ga='git add '
 alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
-alias go='git checkout '
+alias gco='git checkout '
 alias gk='gitk --all&'
 alias gx='gitx --all'
 alias got='git '
@@ -68,4 +68,6 @@ export NVM_DIR="$HOME/.nvm"
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/mannuelferreira/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-eval "$(pyenv init --path)"export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
+eval "$(pyenv init --path)"
+export EDITOR="nvim"
+export VISUAL="$EDITOR"
