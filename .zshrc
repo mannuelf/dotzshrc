@@ -71,3 +71,4 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(pyenv init --path)"
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
+export GPG_TTY=$(tty)
